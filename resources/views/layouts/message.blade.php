@@ -1,28 +1,46 @@
-@if(!empty(session('success')))
-    <div class="am-alert am-alert-success am-u-md-12" data-am-alert>
+@if(count($errors) > 0)
+    <div class="am-alert am-alert-secondary am-u-md-12" data-am-alert>
         <button type="button" class="am-close">&times;</button>
-        <p style="padding: 5px 15px;">{{session('success')}}</p>
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}。</li>
+            @endforeach
+        </ul>
     </div>
 @endif
 
-@if(!empty(session('warning')))
-<div class="am-alert am-alert-warning am-u-md-12" data-am-alert>
-    <button type="button" class="am-close">&times;</button>
-    <p style="padding: 5px 15px;">{{session('warning')}}</p>
-</div>
+@if(!empty($message))
+    <div class="am-alert am-alert-secondary am-u-md-12" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p>{{ $message }}</p>
+    </div>
 @endif
 
-@if(!empty(session('message')))
-<div class="am-alert am-alert-secondary am-u-md-12" data-am-alert>
-    <button type="button" class="am-close">&times;</button>
-    @if(is_array(session('message')))
-    @foreach(session('message') as $value)
-        {{$value}}
-    @endforeach
-    @else
-    <p>{{session('message')}}</p>
-    @endif
-</div>
+@if(session('message'))
+    <div class="am-alert am-alert-secondary am-u-md-12" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        @if(is_array(session('message')))
+            @foreach(session('message') as $value)
+                {{ $value }}
+            @endforeach
+        @else
+            <p>{{ session('message') }}</p>
+        @endif
+    </div>
+@endif
+
+@if(session('success'))
+    <div class="am-alert am-alert-success am-u-md-12" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p>{{ session('success') }}</p>
+    </div>
+@endif
+
+@if(!empty($success))
+    <div class="am-alert am-alert-success am-u-md-12" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p>{{ $success }}</p>
+    </div>
 @endif
 
 @if(!empty($alert))

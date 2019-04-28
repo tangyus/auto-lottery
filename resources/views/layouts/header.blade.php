@@ -15,9 +15,9 @@
                     </span>
                 </a>
                 <ul class="am-dropdown-content">
-                    <li><a href="{{route('index')}}"><span class="am-icon-bell-o"></span> 个人信息</a></li>
-                    <li><a href="{{route('index')}}"><span class="am-icon-headphones"></span> 修改密码</a></li>
-                    <li><a href="{{route('index')}}"><span class="am-icon-power-off"></span> 退出登录</a></li>
+                    <li><a href="{{ url('index') }}"><span class="am-icon-bell-o"></span> 个人信息</a></li>
+                    <li><a href="{{ url('index') }}"><span class="am-icon-headphones"></span> 修改密码</a></li>
+                    <li><a href="{{ url('index') }}"><span class="am-icon-power-off"></span> 退出登录</a></li>
                 </ul>
             </li>
         </ul>

@@ -10,4 +10,9 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function redirectResponse($url, $message, $status = 'message')
+    {
+        return redirect($url)->with($status, $message);
+    }
 }
