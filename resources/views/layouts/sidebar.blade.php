@@ -68,6 +68,21 @@
                         </li>
                     </ul>
                 </li>
+
+                <li class="tpl-left-nav-item">
+                    <a href="javascript:;"  class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-angle-right"></i>
+                        <span>模型管理</span>
+                    </a>
+                    <ul class="tpl-left-nav-sub-menu" style="display: none">
+                        <li>
+                            <a href="{{ route('model.index') }}" class="{{ in_array(Route::currentRouteName(), ['model.index', 'model.create', 'model.edit']) ? 'active' : ''}}">
+                                <i class="am-icon-angle-right"></i>
+                                <span>模型列表</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

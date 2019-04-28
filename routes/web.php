@@ -32,3 +32,5 @@ Route::prefix('award')->group(function () {
     Route::get('list', 'AwardController@awardList')->name('award.list');
     Route::get('list/group', 'AwardController@awardListGroupByTime')->name('award.list.group');
 });
+
+Route::resource('model', 'ModelController');
